@@ -39,6 +39,7 @@ io.on("connection", (socket) => {
     socket.on("move", (move) => {
         try {
             // check for valid move and turn 
+            console.log(`${currentPlayer}`, players)
             if(chess.turn() === 'w' && socket.id !== players.white) return;
             if(chess.turn() === 'b' && socket.id !== players.black) return;
 
